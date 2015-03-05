@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starting_mile: 1
+  ending_mile: 1
+  rate: 9.99
+  total_miles: 1
+  mile_total_cost: 9.99
+  equipment_id: 
+
+two:
+  starting_mile: 1
+  ending_mile: 1
+  rate: 9.99
+  total_miles: 1
+  mile_total_cost: 9.99
+  equipment_id: 
