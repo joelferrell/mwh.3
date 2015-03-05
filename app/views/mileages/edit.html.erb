@@ -1,6 +1,5 @@
-<h1>Editing mileage</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @mileage %> |
-<%= link_to 'Back', mileages_path %>
+<%- model_class = Mileage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Mileage %></h1>
+</div>
+<%= render :partial => 'form' %>

@@ -1,35 +1,44 @@
-<h1>Listing mileages</h1>
-
-<table>
+<%- model_class = Mileage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Mileage %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Starting mile</th>
-      <th>Ending mile</th>
-      <th>Rate</th>
-      <th>Total miles</th>
-      <th>Mile total cost</th>
-      <th>Equipment</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:starting_mile) %></th>
+      <th><%= model_class.human_attribute_name(:ending_mile) %></th>
+      <th><%= model_class.human_attribute_name(:rate) %></th>
+      <th><%= model_class.human_attribute_name(:total_miles) %></th>
+      <th><%= model_class.human_attribute_name(:mile_total_cost) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @mileages.each do |mileage| %>
       <tr>
+        <td><%= mileage.id %></td>
         <td><%= mileage.starting_mile %></td>
         <td><%= mileage.ending_mile %></td>
         <td><%= mileage.rate %></td>
         <td><%= mileage.total_miles %></td>
         <td><%= mileage.mile_total_cost %></td>
-        <td><%= mileage.equipment %></td>
-        <td><%= link_to 'Show', mileage %></td>
-        <td><%= link_to 'Edit', edit_mileage_path(mileage) %></td>
-        <td><%= link_to 'Destroy', mileage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l mileage.created_at, format: :long %></td>
+        <td>
+          <%= link_to mileage_path(mileage), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to mileage_path(mileage), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Mileage', new_mileage_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_mileage_path,
+            :class => 'btn btn-primary' %>
