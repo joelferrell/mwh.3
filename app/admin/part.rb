@@ -1,4 +1,5 @@
 ActiveAdmin.register Part do
+  permit_params :wo_number, :part_number, :part_description, :unit_price, :unit_quantity, :parts_total
 
 
   # See permitted parameters documentation:
