@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wo_number: 1
+  start_date: 2015-03-05 07:27:32
+  comp_date: 2015-03-05 07:27:32
+  requestor: MyString
+  priority: 1
+  repair_facility: MyString
+  repair_type: MyText
+  location: MyText
+  summary: MyText
+  est_completion: 2015-03-05 07:27:32
+  percent_complete: 1
+  equipment_id: 
+
+two:
+  wo_number: 1
+  start_date: 2015-03-05 07:27:32
+  comp_date: 2015-03-05 07:27:32
+  requestor: MyString
+  priority: 1
+  repair_facility: MyString
+  repair_type: MyText
+  location: MyText
+  summary: MyText
+  est_completion: 2015-03-05 07:27:32
+  percent_complete: 1
+  equipment_id: 
