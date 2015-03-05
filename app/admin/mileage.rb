@@ -1,4 +1,5 @@
 ActiveAdmin.register Mileage do
+  permit_params :starting_mile, :ending_mile, :rate, :total_miles, :mile_total_cost
 
 
   # See permitted parameters documentation:
